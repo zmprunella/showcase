@@ -160,6 +160,7 @@ p {
   section {
     padding: 20px;
     margin: 30px auto;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   h1 {
@@ -198,5 +199,57 @@ p {
   .social-icon {
     font-size: 1.5rem; /* Adjusted font size for smaller screens */
     border-radius: 0.5rem; /* Adjusted border radius for smaller screens */
+  }
+}
+
+/* Specific Styles for iPhone SE */
+@media (max-width: 320px) {
+  section {
+    padding: 15px;
+    margin: 20px auto;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Even more transparent background for iPhone SE */
+  }
+
+  h1 {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 0.9em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-link {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 5px 0;
+  }
+
+  .project {
+    padding: 10px;
+  }
+
+  .project-icon {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+  }
+
+  .social-icon {
+    font-size: 1.2rem; /* Adjusted font size for iPhone SE */
+    border-radius: 0.4rem; /* Adjusted border radius for iPhone SE */
   }
 }
