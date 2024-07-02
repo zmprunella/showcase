@@ -202,11 +202,65 @@ p {
   }
 }
 
+/* Tablets */
+@media (max-width: 1024px) {
+  section {
+    margin: 30px 60px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+  section {
+    padding: 20px;
+    margin: 30px 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  h1 {
+    font-size: 1.5em;
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-link {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .project {
+    padding: 15px;
+  }
+
+  .project-icon {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+  }
+
+  .social-icon {
+    font-size: 1.5rem; /* Adjusted font size for smaller screens */
+    border-radius: 0.5rem; /* Adjusted border radius for smaller screens */
+  }
+}
+
 /* Specific Styles for iPhone SE */
 @media (max-width: 320px) {
   section {
     padding: 15px;
-    margin: 20px auto;
+    margin: 20px 15px;
     background-color: rgba(
       0,
       0,
