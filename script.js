@@ -79,16 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
         0.5
       );
       // Add pulsating scale effect with a minimum size
-      // const scale = Math.max(
-      //   Math.sin(time + star.userData.colorOffset) * 0.9 + 1.5,
-      //   0.5
-      // );
-      // star.scale.set(scale, scale, scale);
+      const scale = Math.max(
+        Math.sin(time + star.userData.colorOffset) * 0.9 + 1.5,
+        0.5
+      );
+      star.scale.set(scale, scale, scale);
       // Add slow rotation clockwise
       star.rotation.z -= 0.05;
     });
 
-    rederer.render(scene, camera);
+    renderer.render(scene, camera);
     requestAnimationFrame(animate);
   }
 });
