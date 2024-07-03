@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let scene, camera, renderer;
   let stars = [];
-  let container = document.getElementById("background-scene"); // Reference to the div that will contain the canvas
+  let container = document.getElementById("background-scene");
 
   // Create scene, camera and renderer
   scene = new THREE.Scene();
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function randomPosition() {
     const x = Math.random() * 600 - 300;
     const y = Math.random() * 600 - 300;
-    const z = Math.random() * 1000 - 500; // Increase the range for z-coordinate
+    const z = Math.random() * 1000 - 500;
     return new THREE.Vector3(x, y, z);
   }
 
@@ -61,8 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Resize handler
   window.addEventListener("resize", onWindowResize, false);
 
+  // Check for prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
   // Animation loop
-  animate();
+  if (!prefersReducedMotion) {
+    animate();
+  }
 
   // Window resize handler
   function onWindowResize() {
@@ -75,21 +82,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const time = Date.now() * 0.001;
     stars.forEach((star) => {
       // Move each star along the z-axis
-      star.position.z += 0.7;
+      star.position.z += 0.3;
       if (star.position.z > 100) {
         star.position.z = -400; // reset z position further back
       }
 
       // Change color over time with individual phase offset
       star.material.color.setHSL(
-        ((time + star.userData.colorOffset) * 0.5) % 1,
+        ((time + star.userData.colorOffset) * 0.3) % 1,
         0.5,
         0.5
       );
 
       // Add pulsating scale effect with a minimum size
       const scale = Math.max(
-        Math.sin(time + star.userData.colorOffset) * 0.5 + 1.5,
+        Math.sin(time + star.userData.colorOffset) * 0.9 + 1.5,
         0.5
       );
       star.scale.set(scale, scale, scale);

@@ -28,7 +28,7 @@ section {
   margin: 60px auto;
   max-width: 1000px;
   border: 2px solid #ffffff7d;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85);
   border-radius: 20px;
   color: #fff;
 }
@@ -125,19 +125,19 @@ p {
 }
 
 .project {
-  background-color: #3ea8ffe7;
-  border: 2px solid rgba(255, 255, 255, 0.731);
+  background-color: #ffffffe7;
+  border: 2px solid rgba(0, 0, 0, 0.731);
   border-radius: 10px;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
-  color: #333;
+  color: #000000;
   transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for hover effect */
   height: 100%; /* Ensure the project div takes up the full height of the link */
 }
 
 .project-link:hover .project {
-  background-color: #7dc4ffa4; /* Change color on hover */
+  background-color: #545454a4; /* Change color on hover */
   transform: scale(1.05); /* Slightly enlarge the card on hover */
 }
 
@@ -160,7 +160,7 @@ p {
   section {
     padding: 20px;
     margin: 30px auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
   }
 
   h1 {
@@ -205,6 +205,7 @@ p {
 /* Tablets */
 @media (max-width: 1024px) {
   section {
+    padding: 15px;
     margin: 30px 60px;
   }
 }
@@ -212,9 +213,9 @@ p {
 /* Mobile Devices */
 @media (max-width: 600px) {
   section {
-    padding: 20px;
+    padding: 15px;
     margin: 30px 30px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.85);
   }
 
   h1 {
@@ -259,13 +260,13 @@ p {
 /* Specific Styles for iPhone SE */
 @media (max-width: 320px) {
   section {
-    padding: 15px;
-    margin: 20px 15px;
+    padding: 10px;
+
     background-color: rgba(
       0,
       0,
       0,
-      0.5
+      0.85
     ); /* Even more transparent background for iPhone SE */
   }
 
@@ -305,5 +306,16 @@ p {
   .social-icon {
     font-size: 1.2rem; /* Adjusted font size for iPhone SE */
     border-radius: 0.4rem; /* Adjusted border radius for iPhone SE */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  h1 {
+    animation: none; /* Disable the glow animation for users who prefer reduced motion */
   }
 }
